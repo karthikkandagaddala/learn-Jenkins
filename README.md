@@ -35,6 +35,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/jenkins.service → 
 
 34.234.82.152 | 172.31.24.166 | t3.micro | null
 [ root@ip-172-31-24-166 /etc/yum.repos.d ]# systemctl status jenkins
+
 ● jenkins.service - Jenkins Continuous Integration Server
      Loaded: loaded (/usr/lib/systemd/system/jenkins.service; enabled; preset: disabled)
      Active: active (running) since Sun 2025-09-07 16:31:25 UTC; 15s ago
