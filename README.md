@@ -1,4 +1,5 @@
 **How to Install Jenkins**
+
 34.234.82.152 | 172.31.24.166 | t3.micro | null
 [ ec2-user@ip-172-31-24-166 ~ ]$ sudo su -
 
