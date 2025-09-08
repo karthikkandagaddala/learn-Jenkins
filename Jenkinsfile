@@ -18,6 +18,5 @@ pipeline {
                 sh 'echo this is deploy'
             }
         }
-        
     }
 }
