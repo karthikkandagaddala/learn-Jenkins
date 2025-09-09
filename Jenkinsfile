@@ -22,7 +22,7 @@ pipeline {
                 sh 'echo this is deploy'
             }
         }
-        stage ('karthik') {
+        stage('karthik') {
             steps {
                 sh 'echo Hi I am karthik'
             }
