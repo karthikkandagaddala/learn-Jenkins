@@ -5,6 +5,7 @@ pipeline {
     options {
         timeout(time: 30, unit: 'MINUTES') //This is for with in timeout purpose wwe will use 
         disableConcurrentBuilds() //This is for at a time couldnt run multiple jobs or pipelines
+        ansiColor('xterm')
     }
     environment {
         DEPLOY_TO = 'production'
@@ -35,7 +36,8 @@ pipeline {
     }
     post {
         always {
-            echo 'Pipeline is started and inprogress'
+            echo 'previous workspace files will get delete beacuse next any changes happen means it wont update'
+            deleteDir()
         }
         success {
             echo 'Pipeline is success, then only it will run'
