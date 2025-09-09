@@ -27,5 +27,10 @@ pipeline {
                 sh 'echo Hi I am karthik'
             }
         }
+        stage('DCB') {
+            steps {
+                sh 'echo offer in DCB'
+            }
+        }
     }
 }
