@@ -6,10 +6,15 @@ pipeline {
         timeout(time: 30, unit: 'MINUTES') //This is for with in timeout purpose wwe will use 
         disableConcurrentBuilds() //This is for at a time couldnt run multiple jobs or pipelines
     }
+    environment {
+        DEPLOY_TO = 'production'
+        GREETING = 'Good Morning'  
+    }
     stages {
         stage('build') {
             steps {
                 sh 'echo this is build'
+                sh 'env'
             }
         }
         stage('test') {
@@ -27,10 +32,16 @@ pipeline {
                 sh 'echo Hi I am karthik'
             }
         }
-        stage('DCB') {
-            steps {
-                sh 'echo offer in DCB'
-            }
+    }
+    post {
+        always {
+            echo 'Pipeline is started and inprogress'
+        }
+        success {
+            echo 'Pipeline is success, then only it will run'
+        }
+        failure {
+            echo 'Pipeline is failure, then only it will run'
         }
     }
 }
