@@ -11,13 +11,13 @@ pipeline {
         GREETING = 'Good Morning'  
     }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
                 sh 'echo this is build'
                 sh 'env'
             }
         }
-        stage('test') {
+        stage('Test') {
             steps {
                 sh 'echo this is test'
             }
