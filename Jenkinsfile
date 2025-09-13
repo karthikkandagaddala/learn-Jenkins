@@ -22,7 +22,7 @@ pipeline {
                 sh 'echo this is test'
             }
         }
-        stage('deploy') {
+        stage('Deploy') {
             steps {
                 sh 'echo this is deploy'
             }
