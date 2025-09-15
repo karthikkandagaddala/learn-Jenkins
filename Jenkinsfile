@@ -27,7 +27,7 @@ pipeline {
                 sh 'echo this is deploy'
             }
         }
-        stage('APP DATA') {
+        stage('META DATA') {
             steps {
                 sh 'echo Hi I am karthik'
             }
