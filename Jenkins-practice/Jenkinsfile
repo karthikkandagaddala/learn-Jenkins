@@ -1,0 +1,48 @@
+pipeline {
+    agent {
+        label 'karthik-agent-1'
+    }
+    options {
+        timeout(time: 30, unit: 'MINUTES') //This is for with in timeout purpose wwe will use 
+        disableConcurrentBuilds() //This is for at a time couldnt run multiple jobs or pipelines
+    }
+    environment {
+        DEPLOY_TO = 'production'
+        GREETING = 'Good Morning'  
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo this is build'
+                sh 'env'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'echo this is test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'echo this is deploy'
+            }
+        }
+        stage('META DATA') {
+            steps {
+                sh 'echo Hi I am karthik'
+            }
+        }
+    }
+    post {
+        always {
+            echo 'previous workspace files will get delete beacuse next any changes happen means it wont update'
+            deleteDir()
+        }
+        success {
+            echo 'Pipeline is success, then only it will run'
+        }
+        failure {
+            echo 'Pipeline is failure, then only it will run'
+        }
+    }
+}
